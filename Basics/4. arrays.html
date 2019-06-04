@@ -1,0 +1,33 @@
+<html>
+    <body>
+
+        <ul>
+            <span id='demo'></span>
+        </ul>
+
+        <p> or by forEach() </p>
+
+        <p id=demo1></p>
+
+        <script>
+            var persons = ['jon','arya','cercie','jamie'];
+
+            var len = persons.length;
+            var text='' ;
+            for (i=0;i<len;i++){
+                text+='<li>' + persons[i] + '</li>'
+            }
+            document.getElementById('demo').innerHTML=text;
+
+            var txt='<ul>';
+            persons.forEach(fun);
+            txt+='</ul>';
+
+            function fun(name){
+                txt+='<li>'+ name + '</li>'
+            };
+            document.getElementById('demo1').innerHTML=txt;
+
+        </script>
+    </body>
+</html>
