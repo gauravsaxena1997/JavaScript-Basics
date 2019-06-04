@@ -1,0 +1,95 @@
+<html>
+    <body>
+
+<h2>Special Characters</h2>
+<p>  \' </p>
+<p>  \"" </p>
+<p>  \\ </p>
+
+<p id="demo1"></p>
+
+<script>
+    y='A string in \'in another \' string. '
+    document.getElementById('demo1').innerHTML=y;
+</script>
+
+<h2>String Methods</h2>
+
+<h3>.length</h3>
+<p>Length of 'qazwsxedcrfvtgbyhn' is: </p>
+<p id='demo'>qazwsxedcrfvtgbyhn</p>
+        
+<h3>.indexOf()</h3>
+<p>Please locate where 'locate' occurs!</p>
+<p id='index'></p>
+
+<h3>.lastIndexOf() last occurrence of a specified text in a string</h3>
+<p>Please locate where 'locate' occurs!</p>
+<p id='lastindex'></p>
+
+<h3>indexOf() with second parameter</h3>
+<p>Please locate where 'locate' occurs!</p>
+<p id='index1'></p>
+
+<h3>search() can't take second parameter</h3>
+<p>Please locate where 'locate' occurs!</p>
+<p id='index2'></p>
+
+<ul>
+    <li>The search() method cannot take a second start position argument.</li>
+    <li>The indexOf() method cannot take powerful search values (regular expressions).</li>
+</ul>
+
+<h2>Extracting String Parts</h2>
+<h3>slice() : str.slice(7, 13); str.slice(-12, -6); str.slice(7); str.slice(-12) </h3>
+<h3>substring() : cannot accept negative indexes, same as previous</h3>
+<h3>substr() : second parameter specifies the length of the extracted part</h3>
+
+<h2>Replacing String Content</h2>
+<h3>replace(): str.replace("Microsoft", "W3Schools");</h3>
+<p>/i : case insensitive.</p>
+<p>/g : all occurances.</p>
+
+<h2>toUpperCase() and toLowerCase()</h2>
+
+<h2>concat()</h2>
+<p id="demoo"></p>
+
+<h2>trim() : removes whitespace from both sides of a string</h2>
+
+<h2>Extracting String Characters</h2>
+<ul>
+    <li>charAt(position)</li>
+    <li>charCodeAt(position)</li>
+    <li>Property access [ ]</li>
+</ul>
+<script>
+
+    x='qazwsxedcrfvtgbyhn'
+    document.getElementById('demo').innerHTML=x.length;
+
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate");
+    document.getElementById('index').innerHTML=pos;
+
+    var lastPos = str.lastIndexOf("locate");
+    document.getElementById('lastindex').innerHTML=lastPos;
+
+    var pos1 = str.indexOf("locate",15);
+    document.getElementById('index1').innerHTML=pos1;
+
+    var pos2 = str.search("locate");
+    document.getElementById('index2').innerHTML=pos2;
+
+
+    var text1 = "Hello";
+    var text2 = "World!";
+    var text3 = text1.concat(" ",text2);
+    document.getElementById("demoo").innerHTML = text3;
+
+</script>
+
+    </body>
+</html>
+
+
