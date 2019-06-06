@@ -71,3 +71,10 @@ This has the same function as setting a breakpoint in the debugger.
 
 Never break a return statement.
 
+Functions:
+Hoisting applies to variable declarations and to function declarations.
+Because of this, JavaScript functions can be called before they are declared.
+avaScript functions have both properties and methods.
+The arguments.length property returns the number of arguments received when the function was invoked.
+Arrow functions are not hoisted. They must be defined before they are used.
+Using const is safer than using var, because a function expression is always constant value.

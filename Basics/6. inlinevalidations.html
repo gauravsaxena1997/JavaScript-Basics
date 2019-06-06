@@ -13,46 +13,60 @@
     <h2 class="jumbotron bg-primary"><b>Student Form:</b></h2>
 <div class="row"> 
     <div class="col-md-5 offset-md-2">
-            <form name="studentForm" onsubmit="" method="POST">
+            <form name="studentForm" id='studentForm' method="POST" accept-charset="ISO-8859-1" action="">
                 <div class="md-form">
                     <i class="fa fa-user prefix"></i>
-                    <input mdbInput type="text" id="name" name="name" class="form-control" onkeyup="valname()">
+                    <input mdbInput type="text" id="name" name="name" class="form-control" onkeyup="valname()" required/>
                     <label for="name">Name</label>
                 </div>
                 <div class="error" id="nameError"></div>
                 <div class="md-form">
                     <i class="fa fa-list-ol prefix"></i>
-                    <input mdbInput type="text" id="rno" name="rno" class="form-control" onkeyup="valrno()">
+                    <input mdbInput type="text" id="rno" name="rno" class="form-control" onkeyup="valrno()" required/>
                     <label for="rno">Roll No.</label>
                 </div>
                 <div class="error" id="rnoError"></div>
 
                 <div class="md-form">
                     <i class="fa fa-mobile prefix"></i>
-                    <input mdbInput type="text" id="contact" name="contact" class="form-control" onkeyup="valcontact()">
+                    <input mdbInput type="text" id="contact" name="contact" class="form-control" onkeyup="valcontact()" required/>
                     <label for="contact">Contact</label>
                 </div>
                 <div class="error" id="contactError"></div>
 
                 <div class="md-form">
                     <i class="fa fa-envelope  prefix"></i>
-                    <input mdbInput type="text" id="email" name="email" class="form-control" onkeyup="valemail()">
+                    <input mdbInput type="text" id="email" name="email" class="form-control" onkeyup="valemail()" required/>
                     <label for="email">Email</label>
                 </div>
                 <div class="error" id="emailError"></div>
                 <div class="md-form">
                     <i class="fa fa-key prefix"></i>
-                    <input mdbInput type="password" id="password" name="password" class="form-control" onkeyup="valpass()">
+                    <input mdbInput type="password" id="password" name="password" class="form-control" onkeyup="valpass()" required/>
                     <label for="password">Password</label>
                 </div>
                 <div class="error" id="passwordError"></div>
                 <div class="md-form">
                     <i class="fas fa-address-card prefix"></i>
-                    <textarea type="text" id="addr" name="addr" class="md-textarea form-control" mdbInput ></textarea>
+                    <textarea type="text" id="addr" name="addr" class="md-textarea form-control" mdbInput required></textarea>
                     <label for="addr">Address</label>
                 </div>
                 <input class="btn btn-success" value="Submit" type="submit">
+                <input class="btn btn-primary" type="reset" value="Reset">
+                <!-- <input class="btn btn-primary" onclick="this.form.reset()" value="Reset"> -->
+                <!-- <button class="btn btn-secondary" onclick="dis()">Enable</button> -->
             </form>
+    </div>
+    <div class="col-md-5">
+        <p id='frmLength'></p>
+        <p id='mthd'></p>
+        <p id='name'></p>
+        <p id='charset'></p>
+        <p id='action'></p>
+        <p id='enctype'></p>
+        <button id='val' onclick="getval()" class="btn">Form values</button>
+        <p id='values'></p>
+
     </div>
 </div>
 

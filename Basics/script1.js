@@ -1,4 +1,37 @@
-var addr = document.forms["studentForm"]["addr"];
+console.log('efefe');
+// function dis(){
+//     document.getElementById("submitBtn").disabled = false;
+// }
+
+(function() {
+    var frmLength = document.getElementById('studentForm').length;
+    document.getElementById('frmLength').innerHTML = 'The number of element in the form is : '+frmLength;
+
+    var mthd = document.getElementById('studentForm').method;
+    document.getElementById('mthd').innerHTML = 'The accepted charset is : '+mthd; 
+
+    var name = document.getElementById('studentForm').name;
+    document.getElementById('name').innerHTML = 'The accepted charset is : '+name; 
+
+    var charset = document.getElementById('studentForm').acceptCharset;
+    document.getElementById('charset').innerHTML = 'The accepted charset is : '+charset;    
+
+    var action = document.getElementById('studentForm').action;
+    document.getElementById('action').innerHTML = 'The value of action attribute is : '+action; 
+
+    var enctype = document.getElementById('studentForm').enctype;
+    document.getElementById('enctype').innerHTML = 'The value of action enctype is : '+enctype; 
+})();
+
+function getval(){
+    form = document.getElementById('studentForm');
+    let txt = '';
+    for(let i=0;i<form.length;i++){
+        txt += form.elements[i].value + '</br>';
+    }
+    document.getElementById('values').innerHTML= txt;
+}
+
 // name
 function valname(){
     var name = document.forms["studentForm"]["name"];
