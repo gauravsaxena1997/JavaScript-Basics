@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>DOM</title>
+</head>
+<body>
+  <h1> DOM Manipulation </h1>
+
+
+  <input type="button" id='btn' value='I am a button' onclick="change()"><br><br>
+  <input type="button" id='btn1' value='Click to change into text' onclick="changetotext()"><br><br>
+
+  <button onclick="create()">Add input field</button><br>
+  <div id="button"></div>
+  <div id='parent'>
+        <p id='child'>Child component.</p>
+        <button onclick="del()">Delete child</button><br><br>
+  </div>
+
+  <p id='txt' style="font-size: 20px">Some random text.</p>
+  <button onclick="changeColor()">Change color</button><br><br>
+
+  <button onclick="scr()">See Title</button><br><br>
+
+  <div onmousedown=mdown(this) onmouseup=mup(this)>Click Me!</div><br><br>
+  <div onmouseover=mover(this) onmouseout=mout(this)>Hover over Me!</div>
+
+<script>
+
+var id = 1
+function create(){
+myButton = document.createElement("input");
+myButton.type = "text";
+myButton.id = 'input'+id;
+placeHolder = document.getElementById("button");
+placeHolder.appendChild(myButton);
+id++;
+}
+
+function change(){
+    document.getElementById('btn').value = 'I am the changed button.'
+}
+function changetotext(){
+    document.getElementById('btn1').type = 'text';
+    document.getElementById('btn1').value = '';
+}
+function del(){
+    // manually
+    // parent = document.getElementById('parent');
+    // child = document.getElementById('child');
+    // parent.removeChild(child);
+
+    child = document.getElementById('child');
+    child.parentNode.removeChild(child);
+
+}
+function changeColor(){
+    var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+    var rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+    document.getElementById('txt').style.color = rand;
+}
+function scr(){
+    console.log(document.title);
+}
+function mdown(obj){
+    obj.innerHTML='Release Me!';
+}
+function mup(obj){
+    obj.innerHTML='Click me again!';
+}
+function mover(obj){
+    obj.innerHTML='Thank you!';
+    obj.style.fontSize= '20' ;
+}
+function mout(obj){
+    obj.innerHTML='Hover over me!!!!!';
+}
+</script>
+  </body>
+</html>
+
+<!-- <html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        
+<h1 ></h1>
+
+
+
+<script>
+    
+    
+</script>
+
+    </body>
+</html> -->
