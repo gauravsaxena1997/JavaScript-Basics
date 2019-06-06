@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Html form validations</title>
+        <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2 class="jumbotron bg-primary"><b>Student Form:</b></h2>
+<div class="row"> 
+    <div class="col-md-5 offset-md-2">
+            <form name="studentForm" onsubmit="return doValidation()" method="POST">
+                <div class="md-form">
+                    <i class="fa fa-user prefix"></i>
+                    <input mdbInput type="text" id="name" name="name" class="form-control" min='3' max='15' >
+                    <label for="name">Name</label>
+                </div>
+                <div class="error" id="nameError"></div>
+                <div class="md-form">
+                    <i class="fa fa-list-ol prefix"></i>
+                    <input mdbInput type="text" id="rno" name="rno" class="form-control" >
+                    <label for="rno">Roll No.</label>
+                </div>
+                <div class="error" id="rnoError"></div>
+
+                <div class="md-form">
+                    <i class="fa fa-mobile prefix"></i>
+                    <input mdbInput type="text" id="contact" name="contact" class="form-control" >
+                    <label for="contact">Contact</label>
+                </div>
+                <div class="error" id="contactError"></div>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope  prefix"></i>
+                    <input mdbInput type="text" id="email" name="email" class="form-control" >
+                    <label for="email">Email</label>
+                </div>
+                <div class="error" id="emailError"></div>
+                <div class="md-form">
+                    <i class="fa fa-key prefix"></i>
+                    <input mdbInput type="password" id="password" name="password" class="form-control" >
+                    <label for="password">Password</label>
+                </div>
+                <div class="error" id="passwordError"></div>
+                <div class="md-form">
+                    <i class="fas fa-address-card prefix"></i>
+                    <textarea type="text" id="addr" name="addr" class="md-textarea form-control" mdbInput ></textarea>
+                    <label for="addr">Address</label>
+                </div>
+                <input class="btn btn-success" value="Submit" type="submit">
+            </form>
+    </div>
+    <div id="output" class="col-md-5">
+
+    </div>
+</div>
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

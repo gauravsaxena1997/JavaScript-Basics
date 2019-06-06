@@ -1,6 +1,0 @@
-The type of NaN is a number.
-The type of null is a object.
-The type of array is a object.
-Objects can not be compared.
-You should use objects when you want the element names to be strings (text).
-You should use arrays when you want the element names to be numbers.
