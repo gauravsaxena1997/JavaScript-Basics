@@ -5,7 +5,15 @@
 <body>
   <h1> DOM Manipulation </h1>
 
+    <h2>Resize to see changes.</h2>
+  <h4 id="width"></h4>
+  <h4 id="height"></h4>
+   <h4 id='random'></h4>
 
+
+   <h2 id='screen'>Visitor's screen info:</h2> 
+   <button onclick="window.open()">Open a new window</button>
+   <button onclick="window.close()">Close window</button>
   <input type="button" id='btn' value='I am a button' onclick="change()"><br><br>
   <input type="button" id='btn1' value='Click to change into text' onclick="changetotext()"><br><br>
 
@@ -35,6 +43,9 @@ placeHolder = document.getElementById("button");
 placeHolder.appendChild(myButton);
 id++;
 }
+
+h = document.getElementById('h4');
+console.log(h);
 
 function change(){
     document.getElementById('btn').value = 'I am the changed button.'
@@ -83,24 +94,14 @@ function mover(obj){
 function mout(obj){
     obj.innerHTML='Hover over me!!!!!';
 }
+
+window.addEventListener('resize',function(){
+    document.getElementById('random').innerHTML=Math.random();
+    document.getElementById('width').innerHTML='Browser width is: ' + window.innerWidth;
+    document.getElementById('height').innerHTML='Browser width is: ' + window.innerHeight;
+    document.getElementById('screen').innerHTML='Width: '+ screen.width + '<br>' + 'Height: '+screen.height+'<br>'
+            + 'Available Width'+screen.availWidth+'<br>'+'Available Height'+screen.availHeight;
+})
 </script>
   </body>
 </html>
-
-<!-- <html>
-    <head>
-        <title>DOM</title>
-    </head>
-    <body>
-        
-<h1 ></h1>
-
-
-
-<script>
-    
-    
-</script>
-
-    </body>
-</html> -->
