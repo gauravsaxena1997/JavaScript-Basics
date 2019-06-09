@@ -1,0 +1,38 @@
+<html>
+<body>
+    <h3 id='hello'></h3>
+    <h2>Resize to see changes.</h2>
+    <h4 id="width"></h4>
+    <h4 id="height"></h4>
+    <h4 id='random'></h4>
+    <p id='screen'></p> 
+
+    <button onclick="window.open()">Open a new window</button><br><br>
+
+<script>
+    var name = prompt('Enter your name.');
+    document.getElementById('hello').innerHTML='Hello '+name+' !';
+    document.getElementById('hello').style.textAlign='center';
+    console.log("Color depth is :"+screen.colorDepth);
+    console.log("Pixel depth is :"+screen.pixelDepth);
+    console.log('URL '+location.href);
+    console.log('Hostname '+window.location.hostname);
+    console.log('Pathname '+location.pathname);
+    console.log('Protocol '+location.protocol);
+    console.log('appVersion '+navigator.appVersion);
+    console.log('userAgent '+navigator.userAgent);
+    console.log('platform '+navigator.platform);
+    console.log('language '+navigator.language);
+    console.log('online '+navigator.onLine);
+    
+    window.addEventListener('resize',function(){
+    document.getElementById('random').innerHTML=Math.random();
+    document.getElementById('width').innerHTML='Browser width is: ' + window.innerWidth;
+    document.getElementById('height').innerHTML='Browser width is: ' + window.innerHeight;
+    document.getElementById('screen').innerHTML='<h3>Visitor\'s screen info:</h3> Width: '+ screen.width + '<br>' + 'Height: '+screen.height+'<br>'
+            + 'Available Width'+screen.availWidth+'<br>'+'Available Height'+screen.availHeight;
+})
+    
+</script>
+    </body>
+</html>

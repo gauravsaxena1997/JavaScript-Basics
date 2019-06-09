@@ -8,7 +8,7 @@ console.log('efefe');
     document.getElementById('frmLength').innerHTML = 'The number of element in the form is : '+frmLength;
 
     var mthd = document.getElementById('studentForm').method;
-    document.getElementById('mthd').innerHTML = 'The accepted charset is : '+mthd; 
+    document.getElementById('mthd').innerHTML = 'The method of the form  : '+mthd; 
 
     var name = document.getElementById('studentForm').name;
     document.getElementById('name').innerHTML = 'The accepted charset is : '+name; 
