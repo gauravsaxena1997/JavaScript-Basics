@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+        
+</head>    
+<body>
+<h1>Task 1</h1>
+<h4 id="status"></h4>
+
+<h1>Task 2</h1>
+<button onclick="createp()">Create a paragraph.</button>
+<button onclick="remove1()">Remove paragraph 1.</button>
+<button onclick="replace()">Replace paragraph 2.</button>
+<button onclick="insert()">Insert before paragraph 2.</button>
+<div id="div1"></div>
+
+
+<h1>Task 3</h1>
+<span>On submit </span>
+<input type="text" id="inp">
+<input type="button" onclick="save()" value="Submit">
+<button id="change">Change color depending upon the input</button>
+<br><br>
+<span>On loses focus </span>
+<input type="text" onblur="save2()" id="inp2">
+<button id="change2">Change color depending upon the input</button>
+<br><br>
+<span>On keydown </span>
+<input type="text" onkeyup="save1()" id="inp1">
+<button id="change1">Change color depending upon the input</button>
+
+<h1>Task 4</h1>
+
+<form action="" name="validate">
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" onkeyup="validateEmail()" required>
+    <p id="emailError"></p>
+    <br><label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd" onkeyup="validatePassword()"><br><br>
+    <p id="passwordError"></p>
+    <input type="submit" value="Submit" onclick=show()>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script> 
+</body>    
+</html>    
