@@ -4,7 +4,7 @@
 <h2>Use the XMLHttpRequest to get the content of a file.</h2>
 <p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
 
-<h3 id="parsedJSON"></h3>
+<p id="parsedJSON"></p>
 <script>
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
@@ -12,7 +12,7 @@
             console.log(this.responseText);
             console.log('inside');
             var parsed = JSON.parse(this.responseText);
-            document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name + 'Position: ' + parsed.position;
+            document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name +'<br>'+ 'Position: ' + parsed.position;
         }
     };
     xhttp.open('GET','json_text.txt',true);
