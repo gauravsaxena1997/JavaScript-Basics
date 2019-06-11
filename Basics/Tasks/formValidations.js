@@ -66,6 +66,7 @@ var changeColor = document.getElementById('changeColor');
 changeColor.addEventListener('keyup',function(){
     document.getElementsByClassName('jumbotron')[0].style.backgroundColor = changeColor.value;
     document.getElementById('reset').style.backgroundColor = changeColor.value;
+    changeColor.style.color = changeColor.value;
 })
 
 
