@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html>
 <body>
-<!-- <h1>Parsing JSON</h1>
-<div id="parsedJSON"></div> -->
-<!-- <button onlick="parseJSON()">Get parsed JSON</button> -->
-
-
 <h2>Use the XMLHttpRequest to get the content of a file.</h2>
 <p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
 
-<p id="demo"></p>
+<h3 id="parsedJSON"></h3>
 <script>
-    // function parseJSON(){
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function(){
-    //         if (this.readyState==4 && this.status==200){
-    //             console.log(this.responseText);
-    //             console.log('inside');
-    //             var parsed = JSON.parse(this.responseText);
-    //             document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name + 'Position: ' + parsed.position;
-    //         }
-    //     };
-    // xhttp.open('GET','json_text.txt',true);
-    // xhttp.send();
-    // };
-
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    document.getElementById("demo").innerHTML = myObj.name;
-  }
-};
-xmlhttp.open("GET", "json_text.txt", true);
-xmlhttp.send();
-
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState==4 && this.status==200){
+            console.log(this.responseText);
+            console.log('inside');
+            var parsed = JSON.parse(this.responseText);
+            document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name + 'Position: ' + parsed.position;
+        }
+    };
+    xhttp.open('GET','json_text.txt',true);
+    xhttp.send();
 </script>
 </body>
 </html>

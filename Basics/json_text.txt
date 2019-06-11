@@ -1,6 +1,7 @@
 {
-    "name":"John",
-    "age":31,
+    "name":"Gaurav Saxena",
+    "position":"Technical Analyst",
+    "age":21,
     "pets":[
         { "animal":"dog", "name":"Fido" },
         { "animal":"cat", "name":"Felix" },
