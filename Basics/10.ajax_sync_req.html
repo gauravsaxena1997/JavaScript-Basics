@@ -1,6 +1,7 @@
 <html>
     <body>
         <h2>AJAX Synchronous Request</h2>
+        <div id='resHeaders'></div>
         <div id='ajax'></div>
         <button onmouseover="syncReq()">Synchronous Request</button>
     </body>
@@ -10,6 +11,7 @@
             xhttp.open('GET','ajax_info.txt',false);
             xhttp.send();
             console.log(xhttp.responseType);
+            document.getElementById('resHeaders').innerHTML = 'All response headers: ' + xhttp.getAllResponseHeaders;
             document.getElementById('ajax').innerHTML = xhttp.responseText;
         }
     </script>
