@@ -1,33 +1,47 @@
 <html>
-    <body>
+<body>
+<p id=demo1></p>
+<script>
+    var persons = ['jon','arya','cercie','jamie','hound'];
+    var len = persons.length;
+    var text='' ;
+    console.log('For loop:')
+    for (i=0;i<len;i++){
+        console.log(persons[i]);
+    }
+    console.log('forEach method:')
+    persons.forEach( person => {
+        console.log(person);
+    } )
+    var counter = 1;
+    
+    console.log('map method:')
+    let withIndex = persons.map( person => {
+        return `${counter++}. ${person}`;
+    } )
+    console.log(withIndex);
+    
+    console.log('filter method:')
+    startWithJ = persons.filter( person => {
+        return person[0]==='j';
+    })
+    console.log('Name starts with "j" : '+startWithJ);
+    
+    console.log('reduce method: ');
+    combine = persons.reduce( (combined,person) => {
+        return combined+' '+person;
+    },'danerys');
+    console.log(combine);
 
-        <ul>
-            <span id='demo'></span>
-        </ul>
+    console.log('find method: ');
+    let isDead = person => {
+        return ['hound','cercie','jamie'].includes(person);
+    }
+    console.log(persons.find(isDead));
 
-        <p> or by forEach() </p>
-
-        <p id=demo1></p>
-
-        <script>
-            var persons = ['jon','arya','cercie','jamie'];
-
-            var len = persons.length;
-            var text='' ;
-            for (i=0;i<len;i++){
-                text+='<li>' + persons[i] + '</li>'
-            }
-            document.getElementById('demo').innerHTML=text;
-
-            var txt='<ul>';
-            persons.forEach(fun);
-            txt+='</ul>';
-
-            function fun(name){
-                txt+='<li>'+ name + '</li>'
-            };
-            document.getElementById('demo1').innerHTML=txt;
-
-        </script>
-    </body>
+    console.log('findIndex method');
+    console.log(persons.findIndex(isDead));
+    
+</script>
+</body>
 </html>
