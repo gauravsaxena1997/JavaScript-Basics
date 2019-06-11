@@ -1,7 +1,18 @@
 .jumbotron{
     padding: 20px;
 }
-
 .error{
     color: red
+}
+#message,#showButton,#tick1,#tick2,#tick3{
+    display: none;
+}
+#showButton{
+    cursor: pointer;
+}
+.invalid{
+    color: red;
+}
+.valid{
+    color: green;
 }

@@ -41,23 +41,39 @@
                     <div class="error" id="emailError"></div>
                     <div class="md-form">
                         <i class="fa fa-key prefix"></i>
-                        <input mdbInput type="password" id="password" name="password" class="form-control" onkeyup="valpass()" required/>
+                        <input mdbInput type="password" id="password" name="password" class="form-control" onkeyup="valpass()"
+                        pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-z0-9A-Z]).{8,}" title="Must contain at least one number 
+                        and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                         <label for="password">Password</label>
                         <span onmousedown="showPassword()" onmouseup="hidePassword()" id="showButton">Show password</span>
                     </div>
+                    <div id="message">
+                        Password requires atleast one 
+                            <span id='num' class='invalid'><b> number</b> <i class="far fa-check-circle" id="tick1"></i> </span>, 
+
+                            <span id='alpha' class='invalid'><b>alphabet</b> <i class="far fa-check-circle" id="tick2"></i> </span>and
+                            <span id='specialChar' class='invalid'><b>special character</b><i class="far fa-check-circle" id="tick3"></i></span>.
+                            <br>
+                        Password should be <span class="invalid" id='len'><b>minimum 8 characters long.</b></span>
+                        </div>
                     <div class="error" id="passwordError"></div>
                     <div class="md-form">
                         <i class="fas fa-address-card prefix"></i>
                         <textarea type="text" id="addr" name="addr" class="md-textarea form-control" mdbInput required></textarea>
                         <label for="addr">Address</label>
                     </div>
-                    <button class="btn btn-success" id='val'>Submit</button>
+                    <input class="btn btn-success" id='val' type="submit" value="submit"></input>
                     <input class="btn" type="reset" value="Reset">
                     <button type="button" class="btn btn-primary" onclick="info()" data-toggle="modal" data-target="#modalCookie1">Info</button>
                 </form>
         </div>
     </div>
-    
+
+
+
+
+
+
 <!--Modal:-->
 <div class="modal fade top" id="modalCookie1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true" data-backdrop="true">

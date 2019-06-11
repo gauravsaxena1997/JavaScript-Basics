@@ -1,7 +1,68 @@
-(function(){
-    btn = document.getElementById('showButton');
-    btn.style.display='none';
-})();
+var pwd = document.getElementById('password');
+var msg = document.getElementById('message');
+msg.style.display='none';
+pwd.addEventListener('blur',function(){
+    msg.style.display='none';
+});
+pwd.addEventListener('focus',function(){
+    msg.style.display='block';
+});
+
+var num = document.getElementById('num');
+var alpha = document.getElementById('alpha');
+var specialChar = document.getElementById('specialChar');
+var len = document.getElementById('len');
+var tick1 = document.getElementById('tick1');
+var tick2 = document.getElementById('tick2');
+var tick3 = document.getElementById('tick3');
+pwd.addEventListener('keyup',function(){
+    // validate number
+    var numPattern = /[0-9]/g;
+    if(pwd.value.match(numPattern)){
+        num.classList.remove("invalid");
+        num.classList.add("valid");
+        tick1.style.display="inline";
+        
+    } else {
+        num.classList.remove("valid");
+        num.classList.add('invalid');
+        tick1.style.display="none";
+
+    }
+    // validate alphabets
+    var letterPattern = /[a-zA-Z]/g;
+    if(pwd.value.match(letterPattern)){
+        alpha.classList.remove('invalid');
+        alpha.classList.add('valid');
+        tick2.style.display="inline";
+
+    } else {
+        alpha.classList.remove('valid');
+        alpha.classList.add('invalid');
+        tick2.style.display="none";
+    }
+    // validate special characters
+    var specialPattern = /[^0-9a-zA-Z]/g;
+    if(pwd.value.match(specialPattern)){
+        specialChar.classList.remove('invalid');
+        specialChar.classList.add('valid');
+        tick3.style.display="inline";
+    } else {
+        specialChar.classList.remove('valid');
+        specialChar.classList.add('invalid');
+        tick3.style.display="none";
+    }
+    // validate length
+    if(pwd.value.length>=8){
+        len.classList.remove('invalid');
+        len.classList.add('valid');
+    } else {
+        len.classList.remove('valid');
+        len.classList.add('invalid');
+    }
+    
+})
+
 function info () {
     var frmLength = document.getElementById('studentForm').length;
     document.getElementById('frmLength').innerHTML = 'The number of element in the form is : '+frmLength;
@@ -111,19 +172,10 @@ function valemail(){
 function valpass() {
     var password = document.forms["studentForm"]["password"];
     btn = document.getElementById('showButton');
-    var passformat = /(?=.*\d)(?=.*[a-zA-Z])(?=.*[^0-9a-zA-Z]).{8,}/;
-    passError = '';
-    if (!password.value.length){
-        passError = '';
-        btn.style.display='none';
-        document.getElementById('passwordError').innerHTML=passError;
-    } else if (!password.value.match(passformat) ){
-        passError = 'Atleast one letter and one number and one special character.';
-        document.getElementById('passwordError').innerHTML=passError;
+    if (!password.value==''){
         btn.style.display='block';
     } else {
-        passError = '';
-        document.getElementById('passwordError').innerHTML=passError;
+        btn.style.display='none';
     }
 }
 
@@ -133,3 +185,5 @@ function showPassword(){
 }  function hidePassword(){
     document.getElementById('password').type = 'password';
 }
+
+
