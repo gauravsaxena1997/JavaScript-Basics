@@ -2,10 +2,10 @@
 <html>
 <body>
 
+<h2>AJAX Asynchronous Request</h2>
 <div id="resHeaders"></div>
 <div id="lastModified"></div>
 <div id="demo"></div>
-<h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="asyncReq()">Change Content</button>
 
 <script>
@@ -18,7 +18,7 @@ function asyncReq() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.open("GET", "ajax_info.txt?t=" + Math.random(), true);
   xhttp.send();
 }
 </script>

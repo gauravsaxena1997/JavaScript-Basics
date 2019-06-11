@@ -9,7 +9,7 @@
     <script>
         function syncReq(){
             var xhttp = new XMLHttpRequest();
-            xhttp.open('GET','ajax_info.txt',false);
+            xhttp.open('GET','ajax_info.txt?t=' + Math.random(),false);
             xhttp.send();
             console.log(xhttp.responseType);
             document.getElementById('resHeaders').innerHTML = 'All response headers: ' + xhttp.getAllResponseHeaders();
