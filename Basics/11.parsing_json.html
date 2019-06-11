@@ -9,6 +9,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange(function(){
             if (readyState==4 && status==200){
+                console.log(this.responseText);
                 var parsed = JSON.parse(this.responseText);
                 document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name + 'Position: ' + parsed.position;
             }
