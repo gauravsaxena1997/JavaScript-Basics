@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1>Parsing JSON</h1>
+<div id="parsedJSON"></div>
+<button onlick="parseJSON()">Get parsed JSON</button>
+
+<script>
+    function parseJSON(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange(function(){
+            if (readyState==4 && status==200){
+                var parsed = JSON.parse(this.responseText);
+                document.getElementById('parsedJSON').innerHTML = 'Name: ' + parsed.name + 'Posision: ' + parsed.position;
+            }
+        });
+    };
+    xhttp.open('GET','json_text.txt',true);
+    xhttp.send();
+</script>
+</body>
+</html>
