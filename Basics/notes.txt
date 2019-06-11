@@ -5,14 +5,7 @@ Objects can not be compared.
 You should use objects when you want the element names to be strings (text).
 You should use arrays when you want the element names to be numbers.
 All JavaScript objects have a toString() method.
-Variables and constants declared with let or const are not hoisted!
-JavaScript Initializations are Not Hoisted
-this :
-    In a method, this refers to the owner object.
-    Alone, this refers to the global object.
-    In a function, this refers to the global object.
-    In a function, in strict mode, this is undefined.
-    In an event, this refers to the element that received the event.
+
     Methods like call(), and apply() can refer this to any object.
 call() and apply() used to call an object method with another object as argument.
 bind() method creates a new function that, when called, has its this keyword set to the provided value.

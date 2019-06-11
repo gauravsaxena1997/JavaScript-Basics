@@ -11,14 +11,14 @@
     }
     console.log('forEach method:')
     persons.forEach( person => {
-        console.log(person);
+        console.log(person.length);
     } )
-    var counter = 1;
-    
+
+    var counter = 1;  
     console.log('map method:')
     let withIndex = persons.map( person => {
         return `${counter++}. ${person}`;
-    } )
+    })
     console.log(withIndex);
     
     console.log('filter method:')
@@ -39,9 +39,25 @@
     }
     console.log(persons.find(isDead));
 
-    console.log('findIndex method');
+    console.log('findIndex() method');
     console.log(persons.findIndex(isDead));
     
+    console.log('every() method');
+    let x= persons.every( person => {
+        person.length>3;
+    });
+    console.log(x);
+    
+    console.log('some() method');
+    let y= persons.some( person => {
+        person.length==3;
+    });
+    console.log(y);
+    
+
+
+
+
 </script>
 </body>
 </html>
