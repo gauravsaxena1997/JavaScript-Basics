@@ -5,10 +5,10 @@
 <button onlick="parseJSON()">Get parsed JSON</button>
 
 <script>
-    // function parseJSON(){
+    function parseJSON(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange(function(){
-            if (readyState==4 && status==200){
+            if (this.readyState==4 && this.status==200){
                 console.log(this.responseText);
                 console.log('inside');
                 var parsed = JSON.parse(this.responseText);
@@ -17,7 +17,7 @@
         })
     xhttp.open('GET','json_text.txt',true);
     xhttp.send();
-    // };
+    };
 </script>
 </body>
 </html>
