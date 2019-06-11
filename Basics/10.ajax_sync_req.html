@@ -2,7 +2,8 @@
     <body>
         <h2>AJAX Synchronous Request</h2>
         <div id='resHeaders'></div>
-        <div id='ajax'></div>
+        <div id="lastModified"></div>
+        <div id='response'></div>
         <button onmouseover="syncReq()">Synchronous Request</button>
     </body>
     <script>
@@ -12,7 +13,8 @@
             xhttp.send();
             console.log(xhttp.responseType);
             document.getElementById('resHeaders').innerHTML = 'All response headers: ' + xhttp.getAllResponseHeaders();
-            document.getElementById('ajax').innerHTML = xhttp.responseText;
+            document.getElementById("lastModified").innerHTML = 'Last-Modified: ' + xhttp.getResponseHeader("Last-Modified");
+            document.getElementById('response').innerHTML = xhttp.responseText;
         }
     </script>
 </html>
