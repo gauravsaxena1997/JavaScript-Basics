@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h2>AJAX Synchronous Request</h2>
+        <div id='ajax'></div>
+        <button onmouseover="syncReq()">Synchronous Request</button>
+    </body>
+    <script>
+        function syncReq(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET','ajax_info.txt',false);
+            xhttp.send();
+            console.log(xhttp.responseType);
+            document.getElementById('ajax').innerHTML = xhttp.responseText;
+        }
+    </script>
+</html>
